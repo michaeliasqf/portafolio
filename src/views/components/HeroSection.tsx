@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import type { PortfolioProfile } from "@/models/portfolio";
 import { TiltPanel } from "./TiltPanel";
 
@@ -26,6 +26,10 @@ export function HeroSection({ profile, signature }: HeroSectionProps) {
           </a>
           <a className="secondary-action" href="#contacto">
             Hablemos
+          </a>
+          <a className="secondary-action cv-action" href="/cv-michael-quintana.pdf" target="_blank" rel="noreferrer" download>
+            Descargar CV
+            <Download size={18} />
           </a>
         </div>
       </div>

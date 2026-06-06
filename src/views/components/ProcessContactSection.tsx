@@ -6,7 +6,6 @@ import {
   Mail,
   MapPin,
   Megaphone,
-  Phone,
   Send
 } from "lucide-react";
 import type { PortfolioProfile } from "@/models/portfolio";
@@ -30,9 +29,9 @@ export function ProcessContactSection({ profile }: ProcessContactSectionProps) {
   const linkedIn = profile.socials.find((link) => link.label === "LinkedIn")?.href ?? "#";
 
   return (
-    <section className="section-shell contact-section" id="contacto">
-      <div className="process-lane">
-        <div className="section-kicker">Experiencia laboral</div>
+    <section className="section-shell contact-section">
+      <div className="section-kicker experience-kicker">Experiencia laboral</div>
+      <div className="process-list">
         {profile.experience.map((step, index) => {
           const Icon = experienceIcons[index] ?? BadgeCheck;
           const title = splitExperienceTitle(step.title);
@@ -53,17 +52,11 @@ export function ProcessContactSection({ profile }: ProcessContactSectionProps) {
         })}
       </div>
 
-      <div className="contact-panel">
+      <div className="contact-panel" id="contacto">
         <div>
           <p className="eyebrow">Contacto</p>
           <h2>Disponible para integrarme a un equipo técnico.</h2>
           <p>{profile.availability}</p>
-        </div>
-
-        <div className="contact-orbit" aria-hidden="true">
-          <span><Mail size={18} /></span>
-          <span><Phone size={18} /></span>
-          <span><MapPin size={18} /></span>
         </div>
 
         <div className="contact-actions">
