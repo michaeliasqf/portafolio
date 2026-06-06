@@ -1,0 +1,36 @@
+"use client";
+
+import { Moon, SunMedium } from "lucide-react";
+import { useState } from "react";
+
+type ThemeMode = "dark" | "light";
+
+export function ThemeToggle() {
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    const savedTheme = window.localStorage.getItem("portfolio-theme") as ThemeMode | null;
+    return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+  });
+
+  function toggleTheme() {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem("portfolio-theme", nextTheme);
+    setTheme(nextTheme);
+  }
+
+  return (
+    <button
+      className="theme-toggle"
+      type="button"
+      onClick={toggleTheme}
+      aria-label={`Cambiar a tema ${theme === "dark" ? "claro" : "oscuro"}`}
+      title={`Tema ${theme === "dark" ? "claro" : "oscuro"}`}
+    >
+      {theme === "dark" ? <SunMedium size={18} /> : <Moon size={18} />}
+    </button>
+  );
+}
