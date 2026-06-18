@@ -1,4 +1,5 @@
 import type { IconType } from "react-icons";
+import { FaJava } from "react-icons/fa6";
 import {
   SiCss,
   SiDjango,
@@ -13,7 +14,6 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
-  SiOpenjdk,
   SiPandas,
   SiPostgresql,
   SiPython,
@@ -40,7 +40,7 @@ const iconMap: Record<string, IconType> = {
   Python: SiPython,
   Django: SiDjango,
   FastAPI: SiFastapi,
-  Java: SiOpenjdk,
+  Java: FaJava,
   "Spring Boot": SiSpringboot,
   PostgreSQL: SiPostgresql,
   MySQL: SiMysql,
