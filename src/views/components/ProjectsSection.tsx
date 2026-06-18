@@ -4,20 +4,14 @@ import { ProjectPreviewCarousel } from "./ProjectPreviewCarousel";
 
 type ProjectsSectionProps = {
   projects: Project[];
-  filters: string[];
 };
 
-export function ProjectsSection({ projects, filters }: ProjectsSectionProps) {
+export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <section className="section-shell project-section" id="proyectos">
       <div className="section-kicker">Proyectos destacados</div>
       <div className="section-heading-row">
         <h2>Proyectos con foco en gestión, visualización e IA local.</h2>
-        <div className="filter-rail" aria-label="Tecnologías y categorías">
-          {filters.slice(0, 8).map((filter) => (
-            <span key={filter}>{filter}</span>
-          ))}
-        </div>
       </div>
 
       <div className="project-grid">

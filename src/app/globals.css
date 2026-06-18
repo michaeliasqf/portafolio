@@ -689,6 +689,49 @@ a {
   line-height: 1.05;
 }
 
+.skill-detail {
+  display: grid;
+  gap: 12px;
+}
+
+.skill-detail p {
+  max-width: 28ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.skill-detail ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-detail li {
+  position: relative;
+  padding-left: 13px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.skill-detail li::before {
+  position: absolute;
+  top: 0.58em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  content: "";
+  background: var(--teal);
+}
+
 .chip-list,
 .stack-row,
 .filter-rail {
@@ -1218,6 +1261,10 @@ a {
   }
 
   .metrics-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-detail ul {
     grid-template-columns: 1fr;
   }
 

@@ -1,6 +1,8 @@
 export type SkillGroup = {
   title: string;
   accent: string;
+  description: string;
+  capabilities: string[];
   items: string[];
 };
 
@@ -78,16 +80,29 @@ export const portfolioProfile: PortfolioProfile = {
     {
       title: "Frontend moderno",
       accent: "coral",
+      description: "Construcción de interfaces modernas y escalables",
+      capabilities: [
+        "Componentización",
+        "Gestión de estado",
+        "Formularios tipados",
+        "Validación con Zod",
+        "SSR y SSG",
+        "Responsive Design"
+      ],
       items: ["HTML5", "CSS3", "JavaScript ES6+", "TypeScript", "React", "Next.js", "Tailwind CSS", "Vite", "JSX"]
     },
     {
       title: "Backend y APIs",
       accent: "teal",
-      items: ["Node.js", "Express.js", "Python", "Django", "FastAPI", "APIs REST"]
+      description: "Desarrollo de APIs seguras y mantenibles",
+      capabilities: ["REST APIs", "JWT Authentication", "OAuth", "Middleware", "Validación de datos", "Arquitectura MVC"],
+      items: ["Node.js", "Express.js", "Python", "Django", "FastAPI", "Java", "Spring Boot", "APIs REST"]
     },
     {
       title: "Bases de datos y análisis",
       accent: "gold",
+      description: "Persistencia, consultas y análisis de información",
+      capabilities: ["Modelado relacional", "SQL avanzado", "ORM Prisma", "ETL de datos", "Pandas", "Visualización de datos"],
       items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite", "Pandas", "Matplotlib", "PowerBI", "Docker", "n8n", "Figma"]
     }
   ],
@@ -105,6 +120,8 @@ export const portfolioProfile: PortfolioProfile = {
     { name: "Python", category: "backend" },
     { name: "Django", category: "backend" },
     { name: "FastAPI", category: "backend" },
+    { name: "Java", category: "backend" },
+    { name: "Spring Boot", category: "backend" },
     { name: "PostgreSQL", category: "database" },
     { name: "MySQL", category: "database" },
     { name: "MongoDB", category: "database" },

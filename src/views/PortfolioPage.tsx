@@ -13,7 +13,7 @@ export function PortfolioPage() {
       <HeaderNav navItems={viewModel.navItems} socials={viewModel.profile.socials} />
       <HeroSection profile={viewModel.profile} signature={viewModel.signature} />
       <SystemSection profile={viewModel.profile} />
-      <ProjectsSection projects={viewModel.profile.projects} filters={viewModel.projectFilters} />
+      <ProjectsSection projects={viewModel.profile.projects} />
       <ProcessContactSection profile={viewModel.profile} />
     </main>
   );

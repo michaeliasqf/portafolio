@@ -7,16 +7,16 @@ type ThemeMode = "dark" | "light";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<ThemeMode>(() => {
-    if (typeof window === "undefined") {
-      return "dark";
+    if (typeof document !== "undefined") {
+      return document.documentElement.dataset.theme === "light" ? "light" : "dark";
     }
 
-    const savedTheme = window.localStorage.getItem("portfolio-theme") as ThemeMode | null;
-    return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+    return "dark";
   });
 
   function toggleTheme() {
-    const nextTheme = theme === "dark" ? "light" : "dark";
+    const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     window.localStorage.setItem("portfolio-theme", nextTheme);
     setTheme(nextTheme);

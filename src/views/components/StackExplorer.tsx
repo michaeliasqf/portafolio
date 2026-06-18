@@ -64,6 +64,14 @@ export function StackExplorer({ profile }: { profile: PortfolioProfile }) {
                   <span className="skill-category">{categoryNames[category]}</span>
                   <h3>{group.title}</h3>
                 </div>
+                <div className="skill-detail">
+                  <p>{group.description}</p>
+                  <ul>
+                    {group.capabilities.map((capability) => (
+                      <li key={capability}>{capability}</li>
+                    ))}
+                  </ul>
+                </div>
                 <div className="chip-list">
                   {group.items.map((item) => (
                     <span key={item}>{item}</span>
